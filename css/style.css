@@ -1,0 +1,21 @@
+html {
+    /* on peut le faire dans la balise :root {} */
+    /* on declare une couleur, on lui donne un nom et une valeur */
+    --bg-color: lightgrey;
+    --bg-color-titre: red;
+    --color-fond-titre: white;
+}
+
+
+body {
+    background-color: var(--bg-color);
+}
+
+img {
+    width: 20vw;
+    border-radius: 50%;
+}
+
+h1 {}
+
+h2 {}
