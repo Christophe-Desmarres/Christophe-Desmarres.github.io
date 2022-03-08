@@ -1,10 +1,9 @@
 html {
     /* on peut le faire dans la balise :root {} */
     /* on declare une couleur, on lui donne un nom et une valeur */
-    --bg-color: lightgrey;
+    --bg-color: white;
     --bg-color-titre: red;
     --color-fond-titre: white;
-    background-color: chartreuse;
 }
 
 
@@ -16,12 +15,23 @@ body {
 .container {
     width: 95%;
     margin: 2.5%;
-    box-shadow: 2px 2px 5px black;
+    box-shadow: 4px 4px 7px black;
+    /* border: .5px solid black; */
 }
 
 a {
     text-decoration: none;
     color: black;
+}
+
+header p {
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    display: block;
+    margin: 2px;
 }
 
 .underline {
@@ -49,15 +59,13 @@ a {
 
 h1 {
     display: block;
-    color: blue;
     margin-left: auto;
     margin-right: auto;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 
 header {
-    background-color: red;
     padding: .5rem;
 }
 
@@ -70,32 +78,15 @@ header {
 
 .portrait {
     display: block;
-    margin-top: 2%;
+    margin: 3%;
     margin-left: auto;
     margin-right: auto;
-    width: 30vw;
+    width: 35%;
     border-radius: 50%;
     box-shadow: 2px 2px 5px black;
 }
 
-#coordonees {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1% 5% 2% 5%;
-}
-
-#coordonees p,
-#coordonees div {
-    font-size: 1rem;
-    display: inline-block;
-    margin: 0;
-}
-
-#coordonees span {
-    margin-left: 9%;
-}
-
+/* 
 .align_middle {
     display: inline;
     height: 1.5rem;
@@ -109,20 +100,37 @@ header {
     margin-right: 5px;
     vertical-align: baseline;
 
-}
+} */
 
 
-.lien_réseaux {
+div.lien_réseaux {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     width: 90%;
     margin: auto;
 }
 
+.lien_réseaux a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 2rem;
+    font-size: 1.5rem;
+    padding: 5px 5px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid black;
+
+}
+
 .lien_réseaux img {
     display: inline;
-    height: 2rem;
+    vertical-align: middle;
+    max-height: 2rem;
+    margin-left: 10px;
+    margin-right: auto;
 }
 
 .entreprise {
@@ -135,18 +143,25 @@ header {
 }
 
 h2 {
-    color: brown;
+    color: aquamarine;
+    background-color: black;
     font-size: 1.5rem;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     display: block;
+    margin: 45px 1% 25px;
+
     padding: .5rem 1rem;
+    border-bottom: 2px solid aquamarine;
+    border-left: 2px solid aquamarine;
+    box-shadow: 1px -1px 1px black;
 }
 
-p,
+
 time {
     font-size: 1rem;
-    display: inline;
-    margin: 2% 1%;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid black;
 }
 
 li {
@@ -156,19 +171,124 @@ li {
     list-style: circle;
 }
 
-li:before {
-    content: "→ ";
+#formations li {
+    margin-bottom: 20px;
+}
+
+#competences p {
+    display: inline;
+}
+
+#competences li:before {
+    /* → */
+    content: "⥤ ";
     /* caractère UTF-8 */
 }
 
 section {
-    background-color: antiquewhite;
-    border: 2px solid blue;
+    /* background-image: linear-gradient(to bottom right, white, aquamarine); */
+    /* border-left: 2px solid blue; */
 }
 
 section ul {
     margin: 2% 2%;
 }
+
+#interets p {
+    padding: 0 2% 5% 2%;
+}
+
+#inter {
+    display: block;
+    background-color: brown;
+    width: 100px;
+    height: 100px;
+
+}
+
+.carre1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0px 1px 5px black inset;
+}
+
+.defilement {
+    width: 98%;
+    height: 200px;
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    animation-name: diapo;
+    animation-duration: 27s;
+    animation-iteration-count: infinite;
+}
+
+.retour {
+    display: block;
+    margin: 20px 10px;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+@keyframes diapo {
+    0% {
+        background-image: url(image/diaporama/Cie-Ankaa-13.jpg);
+        background-size: cover;
+    }
+
+    11% {
+        background-image: url(../image/diaporama/Cie-Ankaa-31.jpg);
+        background-size: cover;
+    }
+
+    22% {
+        background-image: url(../image/diaporama/Cie-Ankaa-90.jpg);
+        background-size: cover;
+    }
+
+    33% {
+        background-image: url(../image/diaporama/Masterclass-3.jpg);
+        background-size: cover;
+    }
+
+    44% {
+        background-image: url(../image/diaporama/Masterclass-5.jpg);
+        background-size: cover;
+    }
+
+    55% {
+        background-image: url(../image/diaporama/Masterclass-6.jpg);
+        background-size: cover;
+    }
+
+    66% {
+        background-image: url(../image/diaporama/R_IMG_1.jpg);
+        background-size:
+    }
+
+    78% {
+        background-image: url(../image/diaporama/R_IMG_2.jpg);
+        background-size: cover;
+    }
+
+    90% {
+        background-image: url(../image/diaporama/R_IMG_3.jpg);
+        background-size: cover;
+    }
+
+    100% {
+        background-image: url(../image/diaporama/Cie-Ankaa-13.jpg);
+        background-size: cover;
+    }
+}
+
+.defilement img {
+    width: 98%;
+    /* visibility: hidden; */
+}
+
 
 @media screen and (min-width: 600px) {
     h1 {
