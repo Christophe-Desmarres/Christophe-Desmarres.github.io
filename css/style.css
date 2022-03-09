@@ -185,10 +185,10 @@ li {
     /* caractère UTF-8 */
 }
 
-section {
-    /* background-image: linear-gradient(to bottom right, white, aquamarine); */
-    /* border-left: 2px solid blue; */
-}
+/* section {
+    background-image: linear-gradient(to bottom right, white, aquamarine);
+border-left: 2px solid blue;
+}*/
 
 section ul {
     margin: 2% 2%;
@@ -207,21 +207,32 @@ section ul {
 }
 
 .carre1 {
+    background-color: blue;
+    display: block;
+
     position: absolute;
     width: 100px;
-    height: 100px;
+    height: 50px;
+    box-shadow: 0px 1px 5px black inset;
+}
+
+.carre2 {
+    background-color: whitesmoke;
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 80px;
     box-shadow: 0px 1px 5px black inset;
 }
 
 .defilement {
     width: 98%;
-    height: 200px;
     display: block;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     animation-name: diapo;
-    animation-duration: 27s;
+    animation-duration: 12s;
     animation-iteration-count: infinite;
 }
 
@@ -265,7 +276,7 @@ section ul {
 
     66% {
         background-image: url(../image/diaporama/R_IMG_1.jpg);
-        background-size:
+        background-size: cover;
     }
 
     78% {
@@ -286,7 +297,7 @@ section ul {
 
 .defilement img {
     width: 98%;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 
