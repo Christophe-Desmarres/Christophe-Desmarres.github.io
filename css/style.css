@@ -198,31 +198,8 @@ section ul {
     padding: 0 2% 5% 2%;
 }
 
-#inter {
-    display: block;
-    background-color: brown;
-    width: 100px;
-    height: 100px;
-
-}
-
-.carre1 {
-    background-color: blue;
-    display: block;
-
-    position: absolute;
-    width: 100px;
-    height: 50px;
-    box-shadow: 0px 1px 5px black inset;
-}
-
-.carre2 {
-    background-color: whitesmoke;
-    display: block;
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    box-shadow: 0px 1px 5px black inset;
+#experiences li {
+    
 }
 
 .defilement {
@@ -232,15 +209,8 @@ section ul {
     margin-left: auto;
     margin-right: auto;
     animation-name: diapo;
-    animation-duration: 12s;
+    animation-duration: 27s;
     animation-iteration-count: infinite;
-}
-
-.retour {
-    display: block;
-    margin: 20px 10px;
-    margin-top: 20px;
-    font-size: 1rem;
 }
 
 @keyframes diapo {
@@ -293,6 +263,13 @@ section ul {
         background-image: url(../image/diaporama/Cie-Ankaa-13.jpg);
         background-size: cover;
     }
+}
+
+.retour {
+    display: block;
+    margin: 20px 10px;
+    margin-top: 20px;
+    font-size: 1rem;
 }
 
 .defilement img {
