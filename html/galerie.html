@@ -23,16 +23,73 @@
     </div>
     <a href="../index.html" class="underline retour">RETOUR ⮨</a>
 
-    <button class="inter">
-
+    <button id="interupteur" class="inter">
+        <img class="mode1" src="../image/icones/icone-soleil.png" alt="">
         <div class="inner">
 
-            <div class="carre1"> </div>
+            <div class="carre1"></div>
             <!-- <div class="carre2"></div> -->
         </div>
     </button>
 
 
+
+
+
+
+
+
+    <script>
+        var mode = "jour";
+        document.getElementById("interupteur").addEventListener("click", function () {
+            if (mode == "jour") {
+                mode = "nuit";
+                document.body.style.backgroundColor = 'rgba(9, 9, 17, 0.959)';
+                document.body.style.color = "white";
+                document.getElementsByTagName("img")[1].src = '../image/icones/icone-moon.png';
+                // document.getElementsByClassName("container").style.boxShadow = "4px 4px 7px white";
+                document.getElementsByTagName("a").style.color = "white";
+                // document.getElementsByClassName("underline::before").style.backgroundColor = "white";
+                // document.getElementsByClassName("portrait").style.backgroundColor = "white";
+                // document.getElementsByClassName("lien_reseau a").style.borderBottom = "white";
+                // document.h2.style.color = "black";
+                // document.h2.style.backgroundColor = "aquamarine";
+                // document.h2.style.borderBottom = "black";
+                // document.h2.style.borderLeft = "black";
+                // document.h2.style.boxShadow = "aquamarine";
+                // document.getElementsByClassName("time").style.borderBottom = "white";
+                // couleursdoc.style.txtColor = "white";
+                // couleursdoc.style.h2Color = "aquamarine";
+                // couleursdoc.style.h2BgColor = "black";
+                // couleursdoc.style.n2BorderColor = "aquamarine";
+                // couleursdoc.style.shadow = "black";
+                // couleursdoc.style.borderUnderline = "black";
+            } else {
+                mode = "jour";
+                document.body.style.backgroundColor = "white";
+                document.body.style.color = "black";
+                document.getElementsByTagName("img")[1].src = '../image/icones/icone-soleil.png';
+                // document.getElementsByClassName("container").style.boxShadow = "4px 4px 7px black";
+                document.getElementsByTagName("a").style.color = "black";
+                // document.getElementsByClassName("underline::before").style.backgroundColor = "black";
+                // document.getElementsByClassName("portrait").style.backgroundColor = "black";
+                // document.getElementsByClassName("lien_reseau a").style.borderBottom = "black";
+                // document.h2.style.color = "aquamarine";
+                // document.h2.style.backgroundColor = "black";
+                // document.h2.style.borderBottom = "aquamarine";
+                // document.h2.style.borderLeft = "aquamarine";
+                // document.h2.style.boxShadow = "black";
+                // document.getElementsByClassName("time").style.borderBottom = "black";
+                // couleursdoc.style.txtColor = "black";
+                // couleursdoc.style.h2Color = "aquamarine";
+                // couleursdoc.style.h2BgColor = "black";
+                // couleursdoc.style.n2BorderColor = "aquamarine";
+                // couleursdoc.style.shadow = "black";
+                // couleursdoc.style.borderUnderline = "black";
+            }
+
+        });
+    </script>
 
 </body>
 

@@ -2,8 +2,24 @@ html {
     /* on peut le faire dans la balise :root {} */
     /* on declare une couleur, on lui donne un nom et une valeur */
     --bg-color: white;
-    --bg-color-titre: red;
-    --color-fond-titre: white;
+    --text-color: black;
+    --h2-color: aquamarine;
+    --h2-bg-color: black;
+    --h2-border-color: aquamarine;
+    --shadow: black;
+    --border-undeline: black;
+}
+
+button {
+    position: fixed;
+    background-color: rgba(240, 255, 255, 0);
+    margin: 2%;
+}
+
+button img {
+    visibility: visible;
+    width: 2rem;
+    height: 2rem;
 }
 
 
@@ -15,13 +31,12 @@ body {
 .container {
     width: 95%;
     margin: 2.5%;
-    box-shadow: 4px 4px 7px black;
-    /* border: .5px solid black; */
+    box-shadow: 4px 4px 7px var(--shadow);
 }
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--text-color);
 }
 
 header p {
@@ -45,7 +60,7 @@ p {
     right: 0;
     width: 0;
     height: 2px;
-    background-color: black;
+    background-color: var(--border-undeline);
     transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -83,7 +98,7 @@ header {
     margin-right: auto;
     width: 35%;
     border-radius: 50%;
-    box-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 5px var(--shadow);
 }
 
 /* 
@@ -121,7 +136,7 @@ div.lien_réseaux {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--border-undeline);
 
 }
 
@@ -136,24 +151,26 @@ div.lien_réseaux {
 .entreprise {
     font-weight: bold;
     font-size: 1.2rem;
+    text-decoration: underline;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .poste {
     font-size: 1.1rem;
+    font-weight: bold;
 }
 
 h2 {
-    color: aquamarine;
-    background-color: black;
+    color: var(--h2-color);
+    background-color: var(--h2-bg-color);
     font-size: 1.5rem;
-    /* background-color: aquamarine; */
     display: block;
     margin: 45px 1% 25px;
-
     padding: .5rem 1rem;
-    border-bottom: 2px solid aquamarine;
-    border-left: 2px solid aquamarine;
-    box-shadow: 1px -1px 1px black;
+    border-bottom: 2px solid var(--h2-border-color);
+    border-left: 2px solid var(--h2-border-color);
+    box-shadow: 1px -1px 1px var(--shadow);
 }
 
 
@@ -161,7 +178,7 @@ time {
     font-size: 1rem;
     display: inline-block;
     width: 100%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--border-undeline);
 }
 
 li {
@@ -198,9 +215,7 @@ section ul {
     padding: 0 2% 5% 2%;
 }
 
-#experiences li {
-    
-}
+#experiences li {}
 
 .defilement {
     width: 98%;
@@ -209,13 +224,13 @@ section ul {
     margin-left: auto;
     margin-right: auto;
     animation-name: diapo;
-    animation-duration: 27s;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
 }
 
 @keyframes diapo {
     0% {
-        background-image: url(image/diaporama/Cie-Ankaa-13.jpg);
+        background-image: url(../image/diaporama/Cie-Ankaa-13.jpg);
         background-size: cover;
     }
 
@@ -267,9 +282,11 @@ section ul {
 
 .retour {
     display: block;
-    margin: 20px 10px;
+    margin-left: 10px;
     margin-top: 20px;
     font-size: 1rem;
+    float: left;
+    color: black;
 }
 
 .defilement img {
@@ -317,3 +334,13 @@ section ul {
         width: 35%;
     }
 }
+
+
+
+
+
+/* 
+faire une transition au chgt de page genre de gauche vers la droite 
+faire une animation pour le chgt de theme
+creer une page php pour galerie.php
+*/
