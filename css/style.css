@@ -48,6 +48,7 @@ button img {
     margin-left: -25px;
 
 }
+
 /* 
 .carre1 {
     position: absolute;
@@ -365,8 +366,16 @@ section ul {
         color: crimson;
     }
 
-    .lien_réseaux {
-        width: 75%;
+    div.lien_réseaux {
+        width: 95%;
+        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .underline {
+        width: 10%;
+        font-size: 1rem;
     }
 
     #coordonees {
