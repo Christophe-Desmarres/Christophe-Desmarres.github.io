@@ -154,14 +154,14 @@ header {
     box-shadow: 2px 2px 5px var(--shadow);
 }
 
-/* 
+
 .align_middle {
     display: inline;
-    height: 1.5rem;
     margin-right: 5px;
     vertical-align: middle;
 }
 
+/* 
 #icone_maps {
     display: inline;
     height: 1.5rem;
@@ -191,6 +191,11 @@ div.lien_réseaux {
     margin-right: auto;
     border-bottom: 1px solid var(--border-undeline);
 
+}
+
+.icone {
+    height: 3rem;
+    vertical-align: middle;
 }
 
 .lien_réseaux img {
@@ -373,8 +378,26 @@ section ul {
         flex-wrap: nowrap;
     }
 
+    .lien_réseaux a {
+        display: flex;
+        font-size: 1rem;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: space-between;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .lien_réseaux img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .align_middle {
+        margin-left: 10px;
+    }
+
     .underline {
-        width: 10%;
         font-size: 1rem;
     }
 
