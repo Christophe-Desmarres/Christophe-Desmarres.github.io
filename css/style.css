@@ -3,11 +3,13 @@ html {
     /* on declare une couleur, on lui donne un nom et une valeur */
     --bg-color: white;
     --text-color: black;
-    --h2-color: aquamarine;
+    --h1-color: black;
+    --h2-color: white;
     --h2-bg-color: black;
     --h2-border-color: aquamarine;
     --shadow: black;
     --border-undeline: black;
+    font-family: 'Rubik', sans-serif;
 }
 
 button {
@@ -135,6 +137,7 @@ h1 {
     margin-right: auto;
     font-size: 3rem;
     text-align: center;
+    color: var(--h1-color);
 }
 
 
@@ -149,7 +152,9 @@ header {
     margin: 3%;
     margin-left: auto;
     margin-right: auto;
-    width: 35%;
+    /* width: 35%; */
+    width: 10rem;
+
     border-radius: 50%;
     box-shadow: 2px 2px 5px var(--shadow);
 }
@@ -196,6 +201,9 @@ div.lien_réseaux {
 .icone {
     height: 3rem;
     vertical-align: middle;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    display: inline-block;
 }
 
 .lien_réseaux img {
@@ -278,11 +286,11 @@ section ul {
 .defilement {
     width: 98%;
     display: block;
-    margin-top: 10px;
+    margin: 10px;
     margin-left: auto;
     margin-right: auto;
     animation-name: diapo;
-    animation-duration: 30s;
+    animation-duration: 40s;
     animation-iteration-count: infinite;
 }
 
@@ -354,21 +362,32 @@ section ul {
 
 
 @media screen and (min-width: 600px) {
+    html {
+        --h1-color: chartreuse;
+        --h2-color : var(--h1-color);
+    }
+
     h1 {
-        font-size: 3rem;
-        color: chartreuse;
+        font-size: 3.2rem;
     }
 
     .lien_réseaux {
         width: 60%;
     }
 
+    .portrait {
+        width: 10rem;
+    }
+
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 800px) {
+    html {
+        --h1-color: crimson;
+    }
+
     h1 {
         font-size: 4rem;
-        color: crimson;
     }
 
     div.lien_réseaux {
@@ -386,6 +405,11 @@ section ul {
         align-content: space-between;
         justify-content: space-around;
         align-items: center;
+        padding-bottom: 1rem;
+    }
+
+    header p {
+        font-size: 1.5rem;
     }
 
     .lien_réseaux img {
@@ -404,18 +428,43 @@ section ul {
     #coordonees {
         margin: 2% 5% 1% 5%;
     }
+
+    .portrait {
+        width: 10rem;
+    }
 }
 
 @media screen and (min-width:1200px) {
-    h1 {
-        width: 40%;
-        color: darkorange;
-        float: left;
-        display: inline;
+html{
+    --h1-color : darkorange;
+}
+    header {
+        display: grid;
+        grid-row: 25% 25% 25% 25%;
+        grid-column: 33% 33% 34%;
     }
 
-    .lien_réseaux {
-        width: 35%;
+    h1 {
+        margin-top: 2rem;
+        /* margin-left: 2rem; */
+        margin-left: auto;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    header p {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .portrait {
+        grid-row: 1/3;
+        grid-column: 2;
+    }
+
+    div.lien_réseaux {
+        grid-row: 3;
+        grid-column: 1/3;
     }
 }
 

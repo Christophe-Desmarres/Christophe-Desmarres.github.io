@@ -64,7 +64,7 @@ let mode = 'jour';
                 
                 h2.forEach(element => {
 
-                    element.style.color = "aquamarine";
+                    element.style.color = "white";
                     element.style.backgroundColor = "black";
                     element.style.borderBottom = "aquamarine";
                     element.style.borderLeft = "aquamarine";
