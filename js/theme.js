@@ -1,97 +1,197 @@
-let mode = 'jour';
+/* 
+faire une transition au chgt de page genre de gauche vers la droite 
+faire une animation pour le chgt de theme
+*/
+
+
+function colorMode() {
+
+    let inter = document.getElementsByClassName('inter');
+    let portrait = document.getElementsByClassName('portrait');
+    let container = document.getElementsByClassName('container');
+    let retour = document.querySelector('#retour');
+    let titleH1 = document.querySelector('h1');
+    let h2 = document.querySelectorAll('h2');
+    let lien = document.querySelectorAll('a');
+    let timeTag = document.querySelectorAll('time');
+
+    if (mode == "jour") {
+        mode = "nuit";
+        console.log("thème sombre activé");
+        new Audio('https://assets.codepen.io/165585/switch.mp3').play();
+        document.body.style.backgroundColor = 'rgba(9, 9, 17, 0.959)';
+        document.body.style.color = "white";
+        titleH1.style.textShadow = "2px 2px 2px rgb(255, 217, 0)";
+        //chgt d'icone avec la lune
+        document.getElementsByClassName("inter")[0].src = '../image/icones/icone-moon.png';
+        //chgt style background-color et box-shadow
+        inter[0].style.backgroundColor = "rgba(9, 9, 17, 0.959)";
+        inter[0].style.boxShadow = "inset 0px 4px 10px white";
+        container[0].style.boxShadow = "4px 4px 10px rgb(255, 217, 0)";
+        h2.forEach(element => {
+            element.style.color = "black";
+            element.style.backgroundColor = "aquamarine";
+            element.style.borderBottom = "black";
+            element.style.borderLeft = "black";
+            element.style.boxShadow = "2px 2px 4px rgb(255, 217, 0)";
+        });
+
+        //pour tous les liens, on inverse les couleurs
+        lien.forEach(element => {
+            //  element.style.color = "white";
+            element.style.filter = "invert(100%)";
+        });
 
 
 
-     function colorMode() {
-           
-        let inter = document.getElementsByClassName('inter');
-        let portrait = document.getElementsByClassName('portrait');
-        let container = document.getElementsByClassName('container');
-        let retour = document.getElementsByClassName('retour');
-        let h2 = document.querySelectorAll('h2');
-        let lien = document.querySelectorAll('a');
-        let timeTag = document.querySelectorAll('time');
+        if (document.title == 'CV Christophe Desmarres') {
+            portrait[0].style.boxShadow = "2px 2px 5px rgb(255, 217, 0)";
+            timeTag.forEach(element => {
+                element.style.borderBottom = "1px solid white";
+            });
 
-        if (mode == "jour") {
-               mode = "nuit";
-               console.log("thème sombre activé");
-               new Audio('https://assets.codepen.io/165585/switch.mp3').play();
-               document.body.style.backgroundColor = 'rgba(9, 9, 17, 0.959)';
-               document.body.style.color = "white";
-               //chgt d'icone avec la lune
-               document.getElementsByClassName("inter")[0].src = '../image/icones/icone-moon.png';
-               //chgt style background-color et box-shadow
-               inter[0].style.backgroundColor = "rgba(9, 9, 17, 0.959)";
-               inter[0].style.boxShadow = "inset 0px 4px 10px white";
-               container[0].style.boxShadow = "4px 4px 10px rgb(255, 217, 0)";
-               h2.forEach(element => {
-                   element.style.color = "black";
-                   element.style.backgroundColor = "aquamarine";
-                   element.style.borderBottom = "black";
-                   element.style.borderLeft = "black";
-                   element.style.boxShadow = "2px 2px 4px rgb(255, 217, 0)";
-                });
-                lien.forEach(element => {
-                    //  element.style.color = "white";
-                     element.style.filter = "invert(100%)";
-                });
+        } else if (document.title == 'galerie') {
+            console.log("mode nuit pour retour galerie");
+            retour[0].style.color = "white";
 
-
-            
-            if (document.title == 'CV Christophe Desmarres') {
-               portrait[0].style.boxShadow = "2px 2px 5px rgb(255, 217, 0)";
-               timeTag.forEach(element => {
-                   element.style.borderBottom =  "1px solid white";
-               });
-
-            } else if (document.title == 'galerie') {
-                retour[0].style.backgroundColor = "white";
-               
-            }
-
-            
-        
-        } else {
-                mode = "jour";
-                console.log("thème clair activé");
-                new Audio('https://assets.codepen.io/165585/switch.mp3').play();
-                document.body.style.backgroundColor = "white";
-                document.body.style.color = "black";
-                document.getElementsByClassName("inter")[0].src = '../image/icones/icone-soleil.png';
-                inter[0].style.backgroundColor = "white";
-                inter[0].style.boxShadow = "inset 0px 4px 10px black";
-                container[0].style.boxShadow = "4px 4px 7px black";
-                
-                h2.forEach(element => {
-
-                    element.style.color = "white";
-                    element.style.backgroundColor = "black";
-                    element.style.borderBottom = "aquamarine";
-                    element.style.borderLeft = "aquamarine";
-                    element.style.boxShadow = "2px 2px 4px black";
-                });
-                lien.forEach(element => {
-                    // element.style.color = "black";
-                    element.style.filter = "invert(0%)";
-
-                });
-
-                
-                if (document.title == 'CV Christophe Desmarres') {
-                portrait[0].style.boxShadow = "2px 2px 5px black";
-                timeTag.forEach(element => {
-                    element.style.borderBottom =  "1px solid black";
-                });
-
-                } else if (document.title == 'galerie') {
-                retour[0].style.color = "black";
-
-            }
-
-            }
-            return mode;
         }
-        
+
+
+
+    } else {
+        mode = "jour";
+        console.log("thème clair activé");
+        new Audio('https://assets.codepen.io/165585/switch.mp3').play();
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        titleH1.style.textShadow = "none";
+        document.getElementsByClassName("inter")[0].src = '../image/icones/icone-soleil.png';
+        inter[0].style.backgroundColor = "white";
+        inter[0].style.boxShadow = "inset 0px 4px 10px black";
+        container[0].style.boxShadow = "4px 4px 7px black";
+
+        h2.forEach(element => {
+
+            element.style.color = "var(--h2-color)";
+            element.style.backgroundColor = "var(--h2-bg-color)";
+            element.style.borderBottom = "2px solid var(--h2-border-color)";
+            element.style.borderLeft = "2px solid var(--h2-border-color)";
+            element.style.boxShadow = "1px -1px 1px var(--shadow)";
+        });
+        lien.forEach(element => {
+            // element.style.color = "black";
+            element.style.filter = "invert(0%)";
+
+        });
+
+
+        if (document.title == 'CV Christophe Desmarres') {
+            portrait[0].style.boxShadow = "2px 2px 5px black";
+            timeTag.forEach(element => {
+                element.style.borderBottom = "1px solid black";
+            });
+
+        } else if (document.title == 'galerie') {
+            retour[0].style.color = "black";
+
+        }
+
+    }
+    return mode;
+}
+
+
+
+
+
+// déclaration variables
+let largeur = window.innerWidth;
+let container = document.querySelector('.container');
+// pour zone gauche
+let leftZone = document.createElement("div");
+leftZone.classList.add("left");
+let competences = document.querySelector("#competences");
+let interets = document.querySelector('#interets');
+// pour zone droite
+let rightZone = document.createElement("div");
+rightZone.classList.add("right");
+let formations = document.querySelector("#formations");
+let experiences = document.querySelector('#experiences');
+
+//appel de la fonction resizeWindow lors de l'evenement resize
+window.addEventListener('resize', resizeWindow);
+
+//fonction qui repositionne les sections suivant la taille d'écran
+function resizeWindow() {
+    let newWidth = window.innerWidth;
+    console.log("window resizing...." + newWidth);
+    //condition uniquement valable dans la pag index.html => titre = CV Christophe Desmarres
+    if (document.title == 'CV Christophe Desmarres') {
+        if (newWidth > 1200) {
+            console.log("classe left display block");
+
+            // gauche
+            container.append(leftZone);
+            leftZone.prepend(competences);
+            leftZone.append(interets);
+
+            // droite
+            container.append(rightZone);
+            rightZone.prepend(experiences);
+            rightZone.prepend(formations);
+
+        } else {
+            container.append(formations);
+            container.append(competences);
+            container.append(experiences);
+            container.append(interets);
+        }
+    }
+}
+
+/**
+<title>Déplacer un élément à la souris</title>
+
+<style>
+
+#square
+{
+  position:absolute;
+  height:100px;
+  width:100px;
+  background-color:red;
+}
+</style>
+</head>
+<body>
+  <div id="square" onmousedown="on_mouse_down_square(event)"></div>
+</body>
+</html>
+var mouse_down = false;
+
+function on_mouse_down_square(event) {
+ mouse_down=true;
+}
+
+function on_mouse_up(event){
+ mouse_down=false;
+}
+
+document.onmousemove = on_mouse_move;
+
+document.onmouseup = on_mouse_up;
+
+function on_mouse_move(event) {
+  if (mouse_down === true) {
+    document.querySelector('#square').style.left = event.clientX-50+'px';
+    document.querySelector('#square').style.top = event.clientY-50+'px';
+
+  }
+}
+ */
+
+
+
 
 //-----------------------------------------------
 
@@ -103,7 +203,7 @@ let mode = 'jour';
 
 //     } else {
 //         mode = "jour";
-     
+
 //     }
 
 // });
