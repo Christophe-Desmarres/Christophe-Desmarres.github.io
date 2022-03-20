@@ -1,8 +1,11 @@
 /* 
 faire une transition au chgt de page genre de gauche vers la droite 
-faire une animation pour le chgt de theme
 */
 
+
+//-------------------------------------------------
+// fonction pour le theme sombre
+//-------------------------------------------------
 
 function colorMode() {
 
@@ -14,8 +17,9 @@ function colorMode() {
     let h2 = document.querySelectorAll('h2');
     let lien = document.querySelectorAll('a');
     let timeTag = document.querySelectorAll('time');
+    let accordeonPanel = document.querySelectorAll('.panel');
 
-    if (mode == "jour") {
+    if (mode == "jour") { //on applique le theme sombre
         mode = "nuit";
         console.log("thème sombre activé");
         new Audio('https://assets.codepen.io/165585/switch.mp3').play();
@@ -42,23 +46,29 @@ function colorMode() {
             element.style.filter = "invert(100%)";
         });
 
-
-
         if (document.title == 'CV Christophe Desmarres') {
             portrait[0].style.boxShadow = "2px 2px 5px rgb(255, 217, 0)";
             timeTag.forEach(element => {
                 element.style.borderBottom = "1px solid white";
             });
+            //accordeonPanel.style.color = 'rgba(9, 9, 17, 0.959)';
+            //accordeonPanel[1].style.color = 'rgba(9, 9, 17, 0.959)';
 
-        } else if (document.title == 'galerie') {
-            console.log("mode nuit pour retour galerie");
-            retour[0].style.color = "white";
+            accordeonPanel.forEach(element => {
+                element.style.backgroundColor = 'rgba(9, 9, 17, 0.959)';
+            });
+
 
         }
 
+        // else if (document.title == 'galerie') {
+        //     console.log("mode nuit pour retour galerie");
+        //     //retour.style.color = "white";
+        // }
 
 
-    } else {
+
+    } else { //on applique le theme clair
         mode = "jour";
         console.log("thème clair activé");
         new Audio('https://assets.codepen.io/165585/switch.mp3').play();
@@ -90,19 +100,23 @@ function colorMode() {
             timeTag.forEach(element => {
                 element.style.borderBottom = "1px solid black";
             });
-
-        } else if (document.title == 'galerie') {
-            retour[0].style.color = "black";
+            accordeonPanel.forEach(element => {
+                element.style.backgroundColor = 'white';
+            });
 
         }
+        // else if (document.title == 'galerie') {
+        //     //retour.style.color = "black";
+        // }
 
     }
     return mode;
 }
 
 
-
-
+//-------------------------------------------------
+// fonction pour le repositionnement des sections suivant la taille d'écran
+//-------------------------------------------------
 
 // déclaration variables
 let largeur = window.innerWidth;
@@ -124,12 +138,10 @@ window.addEventListener('resize', resizeWindow);
 //fonction qui repositionne les sections suivant la taille d'écran
 function resizeWindow() {
     let newWidth = window.innerWidth;
-    console.log("window resizing...." + newWidth);
+    //console.log("window resizing...." + newWidth);
     //condition uniquement valable dans la pag index.html => titre = CV Christophe Desmarres
     if (document.title == 'CV Christophe Desmarres') {
         if (newWidth > 1200) {
-            console.log("classe left display block");
-
             // gauche
             container.append(leftZone);
             leftZone.prepend(competences);
@@ -141,6 +153,7 @@ function resizeWindow() {
             rightZone.prepend(formations);
 
         } else {
+            //toutes les sections à la suite
             container.append(formations);
             container.append(competences);
             container.append(experiences);
@@ -148,6 +161,31 @@ function resizeWindow() {
         }
     }
 }
+
+//appel de la fonction 1 fois pour le 1er chargement de la page
+resizeWindow()
+
+//-------------------------------------------------
+// fonction pour le menu accordéon de la page index
+//-------------------------------------------------
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+}
+
+
+
 
 /**
 <title>Déplacer un élément à la souris</title>

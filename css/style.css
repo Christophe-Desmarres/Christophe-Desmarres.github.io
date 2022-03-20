@@ -259,6 +259,46 @@ section ul {
 
 #experiences li {}
 
+/* test menu accordeon */
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active,
+.accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+
 /* partie gauche et droite pour affichage >1200px */
 .left {
     display: none;
@@ -350,7 +390,38 @@ section ul {
     font-size: 1rem;
     float: left;
     color: black;
+    /* style au survol des icones de liens */
+
+    position: relative;
 }
+
+#retour::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--border-undeline);
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* mouse, touch pad */
+@media (any-hover:hover) and (any-pointer:fine) {
+    #retour:hover::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
+}
+
+/* smartphones, touchscreens */
+/* @media (hover: none) and (pointer: coarse) {
+} */
+/* Desktop/Laptop + Touchscreen */
+/* @media (any-hover:hover) and (any-pointer:fine) and (any-pointer:coarse) {
+} */
+
 
 /* mise en page pour différentes tailles d'écran 600, 800 puis 1200px */
 @media screen and (min-width: 600px) {
