@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="../image/icones/logo 700px.gif" type="image/x-icon">
+</head>
+
+<body>
+
+    <button onclick="colorMode()" id="interupteur">
+        <img class="inter" src="../image/icones/icone-soleil.png" alt="">
+    </button>
+
+    <div class="container">
+
+        <h1>Contact</h1>
+
+
+        <h2>Veuillez remplir le formulaire</h2>
+
+        <div class="container">
+
+
+            <form action="submit">
+
+                <div class="row">
+                    <label for="fname">Prénom</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Votre prénom..">
+                </div>
+
+                <div class="row">
+                    <label for="lname">Nom</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Votre nom..">
+                </div>
+
+                <div class="row">
+                    <label for="typeContact">Motif de la demande</label>
+                    <select id="typeContact" name="choix">
+                        <option value="choix">Choisir</option>
+                        <option value="dev">Entretien développeur web</option>
+                        <option value="photo">Prestation photographie</option>
+                        <option value="help">Renseignement</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <label for="subject">Sujet</label>
+                    <textarea id="subject" name="subject" placeholder="Decrivez votre besoin.."
+                        style="height: 100px;"></textarea>
+                </div>
+
+                <div class="row">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+
+
+
+
+    </div>
+
+    <footer>
+        <hr>
+        <nav>
+            <a href="../index.html">Acceuil</a> |
+            <a href="./galerie.html">Galerie</a>
+        </nav>
+    </footer>
+
+
+
+    <script src="../js/variables.js"></script>
+    <script src="../js/theme.js"></script>
+</body>
+
+</html>
