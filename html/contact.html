@@ -17,7 +17,7 @@
 
 <body>
 
-    <button onclick="colorMode()" id="interupteur">
+    <button class="interupteur">
         <img class="inter" src="../image/icones/icone-soleil.png" alt="">
     </button>
 
@@ -34,19 +34,24 @@
             <form action="submit">
 
                 <div class="row">
-                    <label for="fname">Prénom</label>
+                    <label for="fname" class="form--left">Prénom</label>
                     <input type="text" id="fname" name="firstname" placeholder="Votre prénom..">
                 </div>
 
                 <div class="row">
-                    <label for="lname">Nom</label>
+                    <label for="lname" class="form--left">Nom</label>
                     <input type="text" id="lname" name="lastname" placeholder="Votre nom..">
                 </div>
 
                 <div class="row">
-                    <label for="typeContact">Motif de la demande</label>
+                    <label for="useremail" class="form--left">Email</label>
+                    <input type="email" id="useremail" name="useremail" placeholder="Votre email..">
+                </div>
+
+                <div class="row">
+                    <label for="typeContact" class="form--left">Motif de la demande</label>
                     <select id="typeContact" name="choix">
-                        <option value="choix">Choisir</option>
+                        <option value="choix">--Choisir un motif--</option>
                         <option value="dev">Entretien développeur web</option>
                         <option value="photo">Prestation photographie</option>
                         <option value="help">Renseignement</option>
@@ -54,13 +59,13 @@
                 </div>
 
                 <div class="row">
-                    <label for="subject">Sujet</label>
+                    <label for="subject" class="form--left">Sujet</label>
                     <textarea id="subject" name="subject" placeholder="Decrivez votre besoin.."
                         style="height: 100px;"></textarea>
                 </div>
 
                 <div class="row">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Envoyer">
                 </div>
             </form>
         </div>
@@ -73,7 +78,7 @@
     <footer>
         <hr>
         <nav>
-            <a href="../index.html">Acceuil</a> |
+            <a href="../index.html">Accueil</a> |
             <a href="./galerie.html">Galerie</a>
         </nav>
     </footer>
@@ -81,7 +86,7 @@
 
 
     <script src="../js/variables.js"></script>
-    <script src="../js/theme.js"></script>
+    <script src="../js/theme-mode.js"></script>
 </body>
 
 </html>
