@@ -4,15 +4,19 @@
 
 const theme = {
 
-    mode: 'jour',
 
     init: function () {
         let btnMode = document.querySelector(".interupteur");
         btnMode.addEventListener('click', theme.handleCHoixTheme);
+        if (localStorage.mode == "jour") { //on applique le theme demandé en cours
+            theme.handleThemeClair();
+        } else {
+            theme.handleThemeSombre();
+        }
     },
 
     handleCHoixTheme: function () {
-        if (mode == "jour") { //on applique le theme sombre
+        if (localStorage.mode == "jour") { //on applique le theme sombre
             theme.handleThemeSombre();
         } else {
             theme.handleThemeClair();
@@ -31,9 +35,11 @@ const theme = {
         let timeTag = document.querySelectorAll('time');
         let accordeonPanel = document.querySelectorAll('.panel');
 
-        mode = "jour";
+        localStorage.mode = "jour";
         console.log("thème clair activé");
-        new Audio('https://assets.codepen.io/165585/switch.mp3').play();
+        let son = new Audio('https://assets.codepen.io/165585/switch.mp3');
+        son.volume = 0.2;
+        son.play();
         document.body.style.backgroundColor = "white";
         document.body.style.color = "black";
         titleH1.style.textShadow = "none";
@@ -81,10 +87,11 @@ const theme = {
         let timeTag = document.querySelectorAll('time');
         let accordeonPanel = document.querySelectorAll('.panel');
 
-        mode = "nuit";
+        localStorage.mode = "nuit";
         console.log("thème sombre activé");
-        new Audio('https://assets.codepen.io/165585/switch.mp3').play();
-        document.body.style.backgroundColor = 'rgba(9, 9, 17, 0.959)';
+        let son = new Audio('https://assets.codepen.io/165585/switch.mp3');
+        son.volume = 0.5;
+        son.play();        document.body.style.backgroundColor = 'rgba(9, 9, 17, 0.959)';
         document.body.style.color = "white";
         titleH1.style.textShadow = "2px 2px 2px rgb(255, 217, 0)";
         //chgt d'icone avec la lune

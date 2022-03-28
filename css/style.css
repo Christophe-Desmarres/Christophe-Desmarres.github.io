@@ -11,6 +11,20 @@ html {
     --shadow: black;
     --border-undeline: black;
     font-family: 'Rubik', sans-serif;
+    /* right: 0; */
+    animation: rightThenLeft .5s linear;
+}
+
+@keyframes rightThenLeft {
+    0% {
+        /* right: 100%; */
+        transform: translateX(100%);
+    }
+
+    100% {
+        /* right: 0; */
+        transform: translateX(0);
+    }
 }
 
 body {

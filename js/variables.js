@@ -1,2 +1,3 @@
-
-let mode = 'jour';
+if (!localStorage.mode) {
+    localStorage.mode = "jour";
+}
