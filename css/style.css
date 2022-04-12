@@ -503,6 +503,33 @@ input[type=submit]:hover {
     clear: both;
 }
 
+#progress{
+	background-color: var(--h1-color);
+	height: 3px;
+	width: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999; /* Peut être important si vous avez un menu en position fixe */
+}
+
+#time{
+    width: 100%;
+    height: 1.3rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: var(--h2-bg-color);
+    
+}
+
+#trainingtime {
+    width: 39%;
+    height: 1.3rem;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: var(--h2-color);
+  
+}
 
 /* mise en page pour différentes tailles d'écran 600, 800 puis 1200px */
 @media screen and (min-width: 600px) {

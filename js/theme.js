@@ -1,9 +1,8 @@
 /* 
-faire une transition au chgt de page genre de gauche vers la droite 
 */
 
 
-liste de fonctions avant la mise en méthode
+// liste de fonctions avant la mise en méthode
 
 
 
