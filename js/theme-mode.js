@@ -34,6 +34,9 @@ const theme = {
         let lien = document.querySelectorAll('a');
         let timeTag = document.querySelectorAll('time');
         let accordeonPanel = document.querySelectorAll('.panel');
+        let barre100 = document.querySelector('#time');
+        let barre = document.querySelector('#trainingtime');
+        let barreText = document.querySelector('#trainingtime>p');
 
         localStorage.mode = "jour";
         console.log("thème clair activé");
@@ -56,6 +59,11 @@ const theme = {
             element.style.borderLeft = "2px solid var(--h2-border-color)";
             element.style.boxShadow = "1px -1px 1px var(--shadow)";
         });
+        //couleur barre de progression
+        barre100.style.backgroundColor = "white";
+        barre100.style.boxShadow = "4px 4px 7px black";
+        barre.style.backgroundColor = "var(--h2-bg-color)";
+        barreText.style.color = "var(--h2-color)";
         lien.forEach(element => {
             // element.style.color = "black";
             element.style.filter = "invert(0%)";
@@ -86,12 +94,16 @@ const theme = {
         let lien = document.querySelectorAll('a');
         let timeTag = document.querySelectorAll('time');
         let accordeonPanel = document.querySelectorAll('.panel');
+        let barre100 = document.querySelector('#time');
+        let barre = document.querySelector('#trainingtime');
+        let barreText = document.querySelector('#trainingtime>p');
 
         localStorage.mode = "nuit";
         console.log("thème sombre activé");
         let son = new Audio('https://assets.codepen.io/165585/switch.mp3');
         son.volume = 0.5;
-        son.play();        document.body.style.backgroundColor = 'rgba(9, 9, 17, 0.959)';
+        son.play();        
+        document.body.style.backgroundColor = 'rgba(9, 9, 17, 0.959)';
         document.body.style.color = "white";
         titleH1.style.textShadow = "2px 2px 2px rgb(255, 217, 0)";
         //chgt d'icone avec la lune
@@ -107,7 +119,11 @@ const theme = {
             element.style.borderLeft = "black";
             element.style.boxShadow = "2px 2px 4px rgb(255, 217, 0)";
         });
-
+        //couleur barre de progression
+        barre100.style.backgroundColor = "black";
+        barre100.style.boxShadow = "2px 2px 4px rgb(255, 217, 0)";
+        barre.style.backgroundColor = "aquamarine";
+        barreText.style.color = "black";
         //pour tous les liens, on inverse les couleurs
         lien.forEach(element => {
             //  element.style.color = "white";

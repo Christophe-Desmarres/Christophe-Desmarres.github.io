@@ -6,7 +6,8 @@ html {
     --text-color: black;
     --h1-color: black;
     --h2-color: white;
-    --h2-bg-color: black;
+    --h2-bg-color: rgb(0, 0, 0);
+
     --h2-border-color: aquamarine;
     --shadow: black;
     --border-undeline: black;
@@ -284,7 +285,9 @@ section ul {
     padding: 0 2% 5% 2%;
 }
 
-#experiences li {}
+#logoDev {
+    display: flex;
+}
 
 /* test menu accordeon */
 .accordion {
@@ -503,32 +506,53 @@ input[type=submit]:hover {
     clear: both;
 }
 
-#progress{
-	background-color: var(--h1-color);
-	height: 3px;
-	width: 0;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 9999; /* Peut être important si vous avez un menu en position fixe */
+#progress {
+    background-color: var(--h1-color);
+    height: 3px;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    /* Peut être important si vous avez un menu en position fixe */
 }
 
-#time{
+#time {
     width: 100%;
-    height: 1.3rem;
     border: 1px solid black;
     border-radius: 5px;
     background-color: var(--h2-bg-color);
-    
+    animation-fill-mode: backwards;
+
+    background: repeating-linear-gradient(-60deg,
+            rgb(0, 0, 0, .5) 0,
+            var(--h1-color) 10px,
+            var(--h2-bg-color) 10px,
+            var(--h2-bg-color) 20px) 0 / 200%;
+    animation: progress-bar 60s linear infinite;
+}
+
+
+@keyframes progress-bar {
+    to {
+        background-position: 100% 0;
+    }
 }
 
 #trainingtime {
     width: 39%;
-    height: 1.3rem;
+    overflow: visible;
     box-sizing: border-box;
     border-radius: 5px;
     background-color: var(--h2-color);
-  
+    text-align: center;
+
+}
+
+#trainingtime p {
+    margin-left: .3rem;
+    height: 1rem;
+
 }
 
 /* mise en page pour différentes tailles d'écran 600, 800 puis 1200px */
