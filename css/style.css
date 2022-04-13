@@ -12,7 +12,6 @@ html {
     --shadow: black;
     --border-undeline: black;
     font-family: 'Rubik', sans-serif;
-    /* right: 0; */
     animation: rightThenLeft .5s linear;
 }
 
@@ -42,6 +41,8 @@ h1 {
     font-size: 3rem;
     text-align: center;
     color: var(--h1-color);
+    border-radius: 5px;
+
 }
 
 h2 {
@@ -54,6 +55,8 @@ h2 {
     border-bottom: 2px solid var(--h2-border-color);
     border-left: 2px solid var(--h2-border-color);
     box-shadow: 1px -1px 1px var(--shadow);
+    border-radius: 5px;
+
 }
 
 p {
@@ -219,12 +222,36 @@ div.lien_réseaux {
 }
 
 .icone {
-    height: 3rem;
+    height: 1rem;
     vertical-align: middle;
     margin-right: 1rem;
     margin-top: 0.5rem;
     display: inline-block;
+    filter: invert(100%);
+    transition: height 1s;
+
 }
+
+.icone[alt='logo css3']{
+    /* filter: invert(0%); */
+
+}
+
+#logoDev {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#logoDev:hover .icone {
+    height: 2rem;
+}
+
+.icone:hover {
+    height: 3rem;
+
+}
+
+
 
 .lien_réseaux img {
     display: inline;
@@ -241,6 +268,11 @@ div.lien_réseaux {
     text-decoration: underline;
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.entreprise ul{
+    width: 90%;
+
 }
 
 .poste {
@@ -295,12 +327,13 @@ section ul {
     color: #444;
     cursor: pointer;
     padding: 18px;
-    width: 100%;
     border: none;
     text-align: left;
     outline: none;
     font-size: 15px;
     transition: 0.4s;
+    border-radius: 5px;
+
 }
 
 .active,
@@ -326,6 +359,8 @@ section ul {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    border-radius: 5px;
+
 }
 
 
@@ -523,12 +558,12 @@ input[type=submit]:hover {
     border-radius: 5px;
     background-color: var(--h2-bg-color);
     animation-fill-mode: backwards;
-
+    margin-top: 5px;
     background: repeating-linear-gradient(-60deg,
             rgb(0, 0, 0, .5) 0,
-            var(--h1-color) 10px,
-            var(--h2-bg-color) 10px,
-            var(--h2-bg-color) 20px) 0 / 200%;
+            black 10px,
+            aquamarine 10px,
+            white 20px) 0 / 200%;
     animation: progress-bar 60s linear infinite;
 }
 
@@ -541,26 +576,24 @@ input[type=submit]:hover {
 
 #trainingtime {
     width: 39%;
+    height: .5rem;
     overflow: visible;
     box-sizing: border-box;
     border-radius: 5px;
     background-color: var(--h2-color);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
     text-align: center;
 
 }
 
 #trainingtime p {
     margin-left: .3rem;
-    height: 1rem;
 
 }
 
 /* mise en page pour différentes tailles d'écran 600, 800 puis 1200px */
 @media screen and (min-width: 600px) {
-    html {
-        --h1-color: chartreuse;
-        --h2-color: var(--h1-color);
-    }
 
     h1 {
         font-size: 3.2rem;
@@ -590,9 +623,6 @@ input[type=submit]:hover {
 }
 
 @media screen and (min-width: 800px) {
-    html {
-        --h1-color: crimson;
-    }
 
     h1 {
         font-size: 4rem;
@@ -649,9 +679,6 @@ input[type=submit]:hover {
 
 @media screen and (min-width:1200px) {
 
-    html {
-        --h1-color: darkorange;
-    }
 
     header {
         display: grid;

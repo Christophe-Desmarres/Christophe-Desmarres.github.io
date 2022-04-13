@@ -29,10 +29,10 @@ window.onload = () => {
 
     //selection et modification pour affichage html
     let barre = document.querySelector('#trainingtime');
-    let barreText = document.querySelector('#trainingtime>p');
+    let barreText = document.querySelector('#progressTraining');
     if (progression <= 100) {
         barre.style.width = progression + "%";
-        barreText.innerHTML = "Progression : " + progression + "%";
+        barreText.innerHTML = "(Progression à " + progression + "%)";
     } else {
         barre.style.width = "100%";
         barreText.innerHTML = "Formation terminée à 100%";

@@ -36,7 +36,8 @@ const theme = {
         let accordeonPanel = document.querySelectorAll('.panel');
         let barre100 = document.querySelector('#time');
         let barre = document.querySelector('#trainingtime');
-        let barreText = document.querySelector('#trainingtime>p');
+        let iconeCompetence = document.querySelector('#logoDev');
+        let barreProgressPage = document.querySelector('#progress');
 
         localStorage.mode = "jour";
         console.log("thème clair activé");
@@ -62,13 +63,13 @@ const theme = {
         //couleur barre de progression
         barre100.style.backgroundColor = "white";
         barre100.style.boxShadow = "4px 4px 7px black";
-        barre.style.backgroundColor = "var(--h2-bg-color)";
-        barreText.style.color = "var(--h2-color)";
+        barre.style.backgroundColor = "var(--h1-color)";
         lien.forEach(element => {
             // element.style.color = "black";
             element.style.filter = "invert(0%)";
-
         });
+        iconeCompetence.style.filter = 'invert(100%)';
+        barreProgressPage.style.backgroundColor = 'black';
 
 
         if (document.title == 'CV Christophe Desmarres') {
@@ -96,7 +97,8 @@ const theme = {
         let accordeonPanel = document.querySelectorAll('.panel');
         let barre100 = document.querySelector('#time');
         let barre = document.querySelector('#trainingtime');
-        let barreText = document.querySelector('#trainingtime>p');
+        let iconeCompetence = document.querySelector('#logoDev');
+        let barreProgressPage = document.querySelector('#progress');
 
         localStorage.mode = "nuit";
         console.log("thème sombre activé");
@@ -123,12 +125,13 @@ const theme = {
         barre100.style.backgroundColor = "black";
         barre100.style.boxShadow = "2px 2px 4px rgb(255, 217, 0)";
         barre.style.backgroundColor = "aquamarine";
-        barreText.style.color = "black";
         //pour tous les liens, on inverse les couleurs
         lien.forEach(element => {
             //  element.style.color = "white";
             element.style.filter = "invert(100%)";
         });
+        iconeCompetence.style.filter = 'invert(0%)';
+        barreProgressPage.style.backgroundColor = 'white';
 
         if (document.title == 'CV Christophe Desmarres') {
             portrait[0].style.boxShadow = "2px 2px 5px rgb(255, 217, 0)";
