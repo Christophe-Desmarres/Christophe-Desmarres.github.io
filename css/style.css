@@ -548,9 +548,11 @@ input[type=submit]:hover {
     position: fixed;
     top: 0;
     left: 0;
+    /* Peut être important si vous le menu est en position fixe */
     z-index: 9999;
-    /* Peut être important si vous avez un menu en position fixe */
 }
+
+
 
 #time {
     width: 100%;
@@ -564,7 +566,7 @@ input[type=submit]:hover {
             black 10px,
             aquamarine 10px,
             white 20px) 0 / 200%;
-    animation: progress-bar 60s linear infinite;
+    animation: progress-bar 50s linear infinite;
 }
 
 
