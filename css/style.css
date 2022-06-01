@@ -71,6 +71,7 @@ a {
 }
 
 header {
+    position: relative;
     padding: .5rem;
 }
 
@@ -97,18 +98,21 @@ footer {
 }
 
 /* css pour le boutton */
-button {
-    position: fixed;
+.interupteur {
+    margin-right: 0px;
+    position: absolute;
     visibility: hidden;
-    top: 2%;
-    right: 10px;
+    top: 1%;
+    right: 0px;
 }
+
 
 button img {
     position: sticky;
     visibility: visible;
     width: 2rem;
     height: 2rem;
+    right: 1%;
 }
 
 /* css pour le style du boutton interupteur theme */
@@ -232,7 +236,7 @@ div.lien_réseaux {
 
 }
 
-.icone[alt='logo css3']{
+.icone[alt='logo css3'] {
     /* filter: invert(0%); */
 
 }
@@ -270,7 +274,7 @@ div.lien_réseaux {
     margin-bottom: 1rem;
 }
 
-.entreprise ul{
+.entreprise ul {
     width: 90%;
 
 }
@@ -302,6 +306,18 @@ li {
     display: inline;
 }
 
+.detail-formation--container {
+    float: right;
+    font-size: smaller;
+}
+
+.detail-formation--list-item {
+    
+}
+.detail-formation--list-item:hover {
+    text-decoration: underline;
+}
+
 /* pour ajouter la fleche avant */
 #competences li:before {
     /* → */
@@ -321,8 +337,10 @@ section ul {
     display: flex;
 }
 
-/* test menu accordeon */
-.accordion {
+/* menu accordeon */
+.accordion {}
+
+.list-xp{
     background-color: #eee;
     color: #444;
     cursor: pointer;
